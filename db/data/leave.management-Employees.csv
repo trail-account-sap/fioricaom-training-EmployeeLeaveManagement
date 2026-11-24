@@ -1,0 +1,9 @@
+ID,employee_id,title,first_name,last_name,email,manager_email,leave_balance_ID
+550e8400-e29b-41d4-a716-446655440001,1001,Software Engineer,Jhon,Doe,jhon.doe@company.com,michael.johnson@company.com,660e8400-e29b-41d4-a716-446655440001
+550e8400-e29b-41d4-a716-446655440002,1002,Senior Software Engineer,Jane,Smith,jane.smith@company.com,michael.johnson@company.com,660e8400-e29b-41d4-a716-446655440002
+550e8400-e29b-41d4-a716-446655440003,1003,Project Manager,Michael,Johnson,michael.johnson@company.com,,660e8400-e29b-41d4-a716-446655440003
+550e8400-e29b-41d4-a716-446655440004,1004,Business Analyst,Emily,Davis,emily.davis@company.com,michael.johnson@company.com,660e8400-e29b-41d4-a716-446655440004
+550e8400-e29b-41d4-a716-446655440005,1005,HR Manager,Robert,Brown,robert.brown@company.com,,660e8400-e29b-41d4-a716-446655440005
+550e8400-e29b-41d4-a716-446655440006,1006,UI/UX Designer,Sophia,Wilson,sophia.wilson@company.com,robert.brown@company.com,660e8400-e29b-41d4-a716-446655440006
+550e8400-e29b-41d4-a716-446655440007,1007,DevOps Engineer,David,Miller,david.miller@company.com,michael.johnson@company.com,660e8400-e29b-41d4-a716-446655440007
+550e8400-e29b-41d4-a716-446655440008,1008,QA Engineer,Olivia,Moore,olivia.moore@company.com,michael.johnson@company.com,660e8400-e29b-41d4-a716-446655440008

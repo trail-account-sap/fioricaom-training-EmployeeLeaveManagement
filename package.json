@@ -1,0 +1,49 @@
+{
+  "name": "EmployeeLeaveManagement",
+  "version": "1.0.0",
+  "dependencies": {
+    "@cap-js/hana": "^2",
+    "@sap/cds": "^9",
+    "@sap/xssec": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2.4",
+    "@sap/cds-dk": "^10.1.0",
+    "@sap/dev-cap-tools": "^1.31.0"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "private": true,
+  "cds": {
+    "requires": {
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "JhonDoe": {
+            "password": "admin",
+            "attr": {
+              "email": "jhon.doe@company.com"
+            }
+          }
+        }
+      },
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      },
+      "[hybrid]": {
+        "db": "hana",
+        "auth": "mocked",
+        "users": {
+          "JhonDoe": {
+            "password": "admin",
+            "attr": {
+              "email": "jhon.doe@company.com"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+annotate LeaveManagementService.LeaveRequests with @(
+    UI.LineItem            : [
+        {
+            Label: 'Employee',
+            Value: employee.name
+        },
+        {
+            Label: 'Start Date',
+            Value: start_date
+        },
+        {
+            Label: 'End Date',
+            Value: end_date
+        },
+        {
+            Label: 'Reason/Description',
+            Value: reason
+        },
+        {
+            Label: 'Leave Type',
+            Value: type
+        },
+        {
+            Label: 'Leave Status',
+            Value: status
+        },
+    ],
+    UI.SelectionFields     : [
+        employee.name,
+        type,
+        reason,
+        status,
+        start_date,
+        end_date
+    ],
+    UI.HeaderInfo          : {
+        $Type         : 'UI.HeaderInfoType',
+        TypeName      : 'Leave Request',
+        TypeNamePlural: 'Leave Requests',
+        Title         : {
+            Label: 'Name',
+            Value: employee.name
+        },
+        Description   : {
+            Label: 'Job Title',
+            Value: employee.title
+        }
+    },
+    UI.Facets              : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Employee Details',
+            Target: '@UI.FieldGroup#Employee',
+
+        },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Leave Details',
+            Target: '@UI.FieldGroup#Leave'
+        },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Approval Details',
+            Target: '@UI.FieldGroup#Approval'
+        }
+    ],
+    UI.FieldGroup #Employee: {Data: [
+        {
+            Label: 'Employee ID',
+            Value: employee.employee_id
+        },
+        {
+            Label: 'Employee Name',
+            Value: employee.name
+        },
+        {
+            Label: 'Email ID',
+            Value: employee.email
+        }
+    ]},
+    UI.FieldGroup #Leave   : {Data: [
+        {
+            Label: 'Start Date',
+            Value: start_date
+        },
+        {
+            Label: 'End Date',
+            Value: end_date
+        },
+        {
+            Label: 'Reason',
+            Value: reason
+        },
+        {
+            Label: 'Leave Type',
+            Value: type
+        }
+
+    ]},
+    UI.FieldGroup #Approval: {Data: [
+        {
+            Label: 'Approver Name',
+            Value: employee.manager.name
+        },
+        {
+            Label: 'Approver Email',
+            Value: employee.manager_email
+        },
+        {
+            Label: 'Leave Status',
+            Value: status
+        }
+    ]}
+);
+
+annotate LeaveManagementService.LeaveRequests with {
+    type @(Common.ValueList:{
+        CollectionPath : 'LeaveTypeVH',
+        Parameters : [
+            {
+                LocalDataProperty : type,
+                ValueListProperty : 'type'
+            },
+            {
+                ValueListProperty : 'text'
+            }
+        ],
+    })
+}

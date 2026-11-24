@@ -1,0 +1,12 @@
+@baseUrl = http://localhost:4004/odata/v4/leave-management
+
+### GET Employee
+GET {{baseUrl}}/Employees
+
+### Update Employee Record
+PATCH {{baseUrl}}/Employees(550e8400-e29b-41d4-a716-446655440001)
+Content-Type: application/json
+
+{
+    "email" : "employee.jhon.doe@starkindustries.com"
+}

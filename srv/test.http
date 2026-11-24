@@ -1,0 +1,43 @@
+POST http://localhost:4004/odata/v4/leave-management/LeaveRequests
+Content-Type: application/json
+
+{
+    "employee_ID" : "550e8400-e29b-41d4-a716-446655440001",
+    "employee_id" : 1001,
+    "start_date": "2026-09-09",
+    "end_date": "2026-09-11",
+    "reason": "Not Applicable",
+    "type": "earned_leave",
+    "status": "approved"
+}
+
+###
+POST http://localhost:4004/odata/v4/leave-management/LeaveRequests?$expand=employee
+Content-Type: application/json
+
+{
+    "employee_ID" : "550e8400-e29b-41d4-a716-446655440001",
+    "employee_id" : 1001,
+    "start_date": "2026-09-09",
+    "end_date": "2026-09-11",
+    "reason": "Not Applicable",
+    "type": "earned_leave",
+    "status": "approved",
+    "employee" : {
+        "employee_id" : 1001
+    }
+}
+
+### LeaveRequests
+POST http://localhost:4004/odata/v4/leave-management/RequestLeave
+Content-Type: application/json
+
+{
+    "employee_id" : 1001,
+    "email" : "example@gmail.com",
+    "start_date": "2026-09-09",
+    "end_date": "2026-09-11",
+    "reason": "Not Applicable_New",
+    "type": "earned_leave"
+
+}
